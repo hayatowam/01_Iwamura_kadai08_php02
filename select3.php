@@ -18,7 +18,14 @@ try {
 // echo 'test';
 // exit(); //この上までちゃんと動いているかいなかのテストができる
 
+
+
+// ---------------------------
+// テスト１
+// ----------------------------
 //２．SQL文を用意(データ取得：SELECT)
+// $sql = 'SHOW TABLES';
+// $stmt = $dbh->query($sql);
 $stmt = $pdo->prepare("SELECT * FROM gs_bm_table");
 
 //3. 実行
@@ -27,9 +34,6 @@ $status = $stmt->execute();
 //4．データ表示
 
 
-// ---------------------------
-// テスト１
-// ----------------------------
 $view="";//空のviewを作成
 if($status==false) {
     //execute（SQL実行時にエラーがある場合）
@@ -60,7 +64,18 @@ var_dump($result['name']);
 // <!-- ************************************* -->
 // <!-- // テスト2 -->
 // <!-- *************************************** -->
-$view="";//空のviewを作成
+
+//２．SQL文を用意(データ取得：SELECT)
+// $sql = 'SHOW TABLES';
+// $stmt = $dbh->query($sql);
+$stmt = $pdo->prepare("SELECT * FROM gs_bm_table");
+
+//3. 実行
+$status = $stmt->execute();
+
+//4．データ表示
+
+// $view="";//空のviewを作成
 
 
 while ($result = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -128,9 +143,8 @@ foreach ($table_data as $key => $val) {
 <!-- Head[End] -->
 
 <!-- Main[Start] -->
-<!-- <div>
-    <div class="container jumbotron"><?= $view ?></div>
-</div> -->
+ <!-- <div>
+<div class="container jumbotron">
 
 
 
