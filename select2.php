@@ -60,47 +60,47 @@ var_dump($result['name']);
 // <!-- ************************************* -->
 // <!-- // テスト2 -->
 // <!-- *************************************** -->
-$view="";//空のviewを作成
+// $view="";//空のviewを作成
 
 
-while ($result = $stmt->fetch(PDO::FETCH_ASSOC)){
-  $table_names[] = $result[0];
-}
+// while ($result = $stmt->fetch(PDO::FETCH_ASSOC)){
+//   $table_names[] = $result[0];
+// }
 
-$table_data = array();
-foreach ($table_names as $key => $val) {
-  $sql2 = "SELECT * FROM $val;";
-  $stmt2 = $dbh->query($sql2);
-  $table_data[$val] = array();
-  while ($result2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
-      foreach ($result2 as $key2 => $val2) {
-          $table_data[$val][$key2] = $val2;
-      }
-  }
-}
+// $table_data = array();
+// foreach ($table_names as $key => $val) {
+//   $sql2 = "SELECT * FROM $val;";
+//   $stmt2 = $dbh->query($sql2);
+//   $table_data[$val] = array();
+//   while ($result2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
+//       foreach ($result2 as $key2 => $val2) {
+//           $table_data[$val][$key2] = $val2;
+//       }
+//   }
+// }
 
-foreach ($table_data as $key => $val) {
-  echo "<h1>$key</h1>";
-  if (empty($val)) {
-      continue;
-  }
-  echo "<table border=1 style=border-collapse:collapse;>";
-  echo "<tr>";
-  foreach ($table_data[$key] as $key2 => $val2) {
-  echo "<th>";
-  echo $key2;
-  echo "</th>";
-  }
-  echo "</tr>";
-  echo "<tr>";
-  foreach ($table_data[$key] as $key2 => $val2) {
-  echo "<td>";
-  echo $val2;
-  echo "</td>";
-  }
-  echo "</tr>";
-  echo "</table>";
-}
+// foreach ($table_data as $key => $val) {
+//   echo "<h1>$key</h1>";
+//   if (empty($val)) {
+//       continue;
+//   }
+//   echo "<table border=1 style=border-collapse:collapse;>";
+//   echo "<tr>";
+//   foreach ($table_data[$key] as $key2 => $val2) {
+//   echo "<th>";
+//   echo $key2;
+//   echo "</th>";
+//   }
+//   echo "</tr>";
+//   echo "<tr>";
+//   foreach ($table_data[$key] as $key2 => $val2) {
+//   echo "<td>";
+//   echo $val2;
+//   echo "</td>";
+//   }
+//   echo "</tr>";
+//   echo "</table>";
+// }
 
 ?>
 <!DOCTYPE html>
@@ -128,9 +128,9 @@ foreach ($table_data as $key => $val) {
 <!-- Head[End] -->
 
 <!-- Main[Start] -->
-<!-- <div>
+<div>
     <div class="container jumbotron"><?= $view ?></div>
-</div> -->
+</div>
 
 
 
