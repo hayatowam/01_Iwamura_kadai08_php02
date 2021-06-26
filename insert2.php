@@ -47,3 +47,6 @@ if($status==false){
   header('Location: index2.php');//ヘッダーロケーション（リダイレクト）
 }
 ?>
+
+
+<!-- // gittest -->
